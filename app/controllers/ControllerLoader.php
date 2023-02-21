@@ -13,7 +13,7 @@ class ControllerLoader {
         $controllerPath = __DIR__ . "/{$controller}.php";
         if(!$controller || !$method || !is_file($controllerPath)) {
             print_r($controller);
-            BaseController::output("Invalid Request", 'HTTP/1.1 404 Not Found');
+            BaseController::output("Invalid Request", array("HTTP/1.1 404 Not Found"));
         }
         require_once($controllerPath);
         $c = new $controller();
