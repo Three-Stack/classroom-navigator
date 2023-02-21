@@ -56,4 +56,9 @@ class TestController extends BaseController {
 
         // An example call to test this function: http://127.0.0.1/Test/example?number1=10&string1=abc
     }
+
+    public function divideBy10($params) {
+        $this->output($params["key"] / 10, array("Content-Type: application/json"));
+    }
+
 }

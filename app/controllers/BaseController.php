@@ -23,7 +23,7 @@ class BaseController {
         }
         else {
             // No headers specified - set the default response as application/json
-            //header("Content-Type: application/json");
+            header("Content-Type: application/json");
         }
         print_r($data);
         die();
