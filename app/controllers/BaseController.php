@@ -15,11 +15,15 @@ class BaseController {
     /**
      * Generic API output
      */
-    public static function output($data, $headers) {
+    public static function output($data, $headers = array()) {
         if (is_array($headers) && count($headers)) {
             foreach ($headers as $h) {
                 header($h);
             }
+        }
+        else {
+            // No headers specified - set the default response as application/json
+            //header("Content-Type: application/json");
         }
         print_r($data);
         die();
