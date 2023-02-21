@@ -2,18 +2,22 @@ version: '3'
 services:
     app:
         image: nginx:latest
+        container_name: tester-app
         ports:
             - "80:80"
         volumes:
             - ./nginx.conf:/etc/nginx/conf.d/nginx.conf
-            - ./app:/app
+            - ./app/www:/app/www
     php:
+        container_name: tester-php
         build:
             context: .
             dockerfile: php-dockerfile
         volumes:
             - ./app:/app
+            - ./filesystem/php/root:/root
     mysql:
+        container_name: tester-mysql
         image: mariadb:latest
         environment:
             MYSQL_ROOT_PASSWORD: 'root123'
