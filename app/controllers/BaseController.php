@@ -9,7 +9,7 @@ class BaseController {
      * Base function for unimplemented methods
      */
     public function __call($name, $args) {
-        echo($_SERVER);
+        //echo($_SERVER);
         $this->output("Invalid Request", array('HTTP/1.1 404 Not Found'));
     }
 
