@@ -1,10 +1,15 @@
 FROM php:fpm
 RUN docker-php-ext-install pdo pdo_mysql
+RUN apt-get update && apt-get install -y git p7zip-full libmagickwand-dev --no-install-recommends
 RUN pecl install xdebug && docker-php-ext-enable xdebug
-RUN apt-get update && apt-get install -y git && apt-get install -y p7zip-full
+RUN pecl install imagick && docker-php-ext-enable imagick
 COPY --from=composer/composer:latest-bin /composer /usr/bin/composer
 
+WORKDIR /root
+
 # Dependencies
-RUN composer global require phpunit/phpunit && \
-    composer global require json-mapper/json-mapper && \
-    chmod -R og+rx /root/.composer
+RUN composer require phpunit/phpunit && \
+    composer require json-mapper/json-mapper && \
+    composer require intervention/image && \
+    # TODO: probably not this???
+    chmod -R og+rx /root

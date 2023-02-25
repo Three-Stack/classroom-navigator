@@ -15,7 +15,6 @@ services:
             dockerfile: php-dockerfile
         volumes:
             - ./app:/app
-            - ./filesystem/php/root:/root
     mysql:
         container_name: tester-mysql
         image: mariadb:latest

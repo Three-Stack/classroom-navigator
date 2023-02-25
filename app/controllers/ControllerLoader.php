@@ -11,12 +11,18 @@ class ControllerLoader {
     public static function Run($controller, $method, $params) {
         $controller .= "Controller";
         $controllerPath = __DIR__ . "/{$controller}.php";
-        if(!$controller || !$method || !is_file($controllerPath)) {
-            print_r($controller);
-            BaseController::output("Invalid Request", array("HTTP/1.1 404 Not Found"));
+        if(!$controller || !is_file($controllerPath)) {
+            // Invalid request
+            $c = new BaseController;
         }
-        require_once($controllerPath);
-        $c = new $controller();
+        else {
+            // Valid request - process it
+            require_once($controllerPath);
+            $c = new $controller();
+            
+        }
+        
         $c->$method($params);
+        $c->output();
     }
 }

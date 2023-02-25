@@ -22,20 +22,22 @@ class TestController extends BaseController {
         // Here we're expecting $params to have the format number1 = value and string1 = value
         if(empty($params["number1"])) {
             // The "number1" parameter wasn't passed in
-            $this->output("number1 key not passed in"); // This will call the "output" function of BaseController
-            // Output also ends the program, so nothing more needs to be done here
+            $this->setResponse("number1 key not passed in"); // Set the controller's response
+            return;
         }
 
         $number = $params["number1"]; // Declaring a variable to hold the value now that we know it exists
         if(!is_numeric($number)) {
             // number1 isn't actually a number...
-            $this->output("number1 must be numeric");
+            $this->setResponse("number1 must be numeric");
+            return;
         }
 
         // Same as above but for the second parameter
         if(empty($params["string1"])) {
             // The "string1" parameter wasn't passed in
-            $this->output("string1 key not passed in"); // This will call the "output" function of BaseController
+            $this->setResponse("string1 key not passed in"); // This will call the "output" function of BaseController
+            return;
         }
 
         $str = $params["string1"];
@@ -52,13 +54,12 @@ class TestController extends BaseController {
         $response .= "the reversed string is {$str}";
 
         // Now that the response is built up, output it
-        $this->output($response);
+        $this->setResponse($response);
 
         // An example call to test this function: http://127.0.0.1/Test/example?number1=10&string1=abc
     }
 
     public function divideBy10($params) {
-        $this->output($params["key"] / 10, array("Content-Type: application/json"));
+        $this->setResponse($params["key"] / 10);
     }
-
 }
