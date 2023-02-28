@@ -59,6 +59,24 @@ class TestController extends BaseController {
         // An example call to test this function: http://127.0.0.1/Test/example?number1=10&string1=abc
     }
 
+    // Gets class info by class ID (ex. CS4800)
+    public function getClassInfo($params) {
+        $this->setResponse("Invalid class or class not found"); // Default failure response
+        if(empty($params["class"])) {
+            return; // User didn't pass in a class name
+        }
+
+        $class = $params["class"];
+        $db = DBConnection::db();
+        $stmt = $db->prepare("SELECT `name`, `time` FROM `classes` WHERE `class_id` = ?");
+        $stmt->execute(array($class));
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        if(empty($row)) {
+            return; // Class doesn't exist
+        }
+        $this->setResponse($row);
+    }
+
     public function divideBy10($params) {
         $this->setResponse($params["key"] / 10);
     }
