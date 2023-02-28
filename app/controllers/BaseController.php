@@ -43,7 +43,7 @@ class BaseController {
             // No headers specified - set the default response as application/json
             header("Content-Type: application/json");
         }
-        print_r($this->response);
+        print_r(json_encode($this->response));
         die();
     }
 }
