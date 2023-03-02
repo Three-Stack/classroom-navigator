@@ -11,5 +11,7 @@ WORKDIR /root
 RUN composer require phpunit/phpunit && \
     composer require json-mapper/json-mapper && \
     composer require intervention/image && \
+    composer require monolog/monolog && \
+    composer require Monolog/Monolog && \
     # TODO: probably not this???
     chmod -R og+rx /root
