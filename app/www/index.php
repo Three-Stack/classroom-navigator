@@ -53,7 +53,7 @@ if($controller !== "" && $method !== "") {
     var name = $('#name_search').val();
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open("GET", "http://127.0.0.1/Test/getClassInfo?class=" + name, false);
-    xmlHttp.send( null );
+    xmlHttp.send(null);
     res = xmlHttp.responseText;
     const obj = JSON.parse(res);
     console.log(obj);

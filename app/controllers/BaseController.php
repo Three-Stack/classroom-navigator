@@ -30,6 +30,13 @@ class BaseController {
     }
 
     /**
+     * Gets the controller's response
+     */
+    public function getResponse() {
+        return $this->response;
+    }
+
+    /**
      * Outputs the response of the controller
      */
     public function output() {
