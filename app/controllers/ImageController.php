@@ -25,14 +25,8 @@ class ImageController extends BaseController {
       $manager = new ImageManager(['driver' => 'imagick']);
       // create empty canvas with background color
       $img = $manager->make(__DIR__.'/../image/'.$params["number1"]);
-
-      // draw a blue line
-      $img->line(10, 10, 100, 10, function ($draw) {
-         $draw->color('#0000ff');
-      });
-
       // draw a red line with 5 pixel width
-      $img->line(10, 10, 195, 195, function ($draw) {
+      $img->line(100, 100, 100, 195, function ($draw) {
          $draw->color('#f00');
          $draw->width(5);
       });
