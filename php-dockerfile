@@ -13,5 +13,6 @@ RUN composer require phpunit/phpunit && \
     composer require intervention/image && \
     composer require monolog/monolog && \
     composer require Monolog/Monolog && \
+    composer require twbs/bootstrap:5.3.0-alpha1 && \
     # TODO: probably not this???
     chmod -R og+rx /root

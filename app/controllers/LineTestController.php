@@ -6,18 +6,6 @@ require_once(__DIR__ . "/../bootstrap.php");
 use Intervention\Image\ImageManager;
 
 class LineTestController extends BaseController {
-   // final public const col = '#f00';
-   // public function line($params){
-   //    $manager = new ImageManager(['driver' => 'imagick']);
-   //    $img = $manager->make(__DIR__.'/../image/'.$params["number1"]);
-
-   //    // draw a red line with 5 pixel width
-   //    $img->line($params["x1"], $params["x2"], $params["x3"], $params["x4"], function ($draw) {
-   //       $draw->color(col);
-   //       $draw->width(5);
-   //    });
-   //    $img->save(__DIR__.'/../image/line.jpg');
-   // }
    public function picker($params){
       $manager = new ImageManager(['driver' => 'imagick']);
       $img = $manager->make(__DIR__.'/../image/'.$params["img"]);
