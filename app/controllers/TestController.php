@@ -65,12 +65,24 @@ class TestController extends BaseController {
         if(empty($params["class"])) {
             return; // User didn't pass in a class name
         }
+        $class = array($params["class"]);
 
-        $class = $params["class"];
+        $query = "SELECT * FROM `classes` WHERE `class_id` LIKE CONCAT('%',?,'%')";
+        
+        if(!empty($params["section"])) {
+            $class[] = $params["section"];
+            $query .= " AND `section` LIKE CONCAT('%',?,'%')";
+        }
+
+        if(!empty($params["instructor"])) {
+            $class[] = $params["instructor"];
+            $query .= " AND `instructor` LIKE CONCAT('%',?,'%')";
+        }
+    
         $db = DBConnection::db();
-        $stmt = $db->prepare("SELECT `name`, `time` FROM `classes` WHERE `class_id` = ?");
-        $stmt->execute(array($class));
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt = $db->prepare($query);
+        $stmt->execute($class);
+        $row = $stmt->fetchall(PDO::FETCH_ASSOC);
         if(empty($row)) {
             return; // Class doesn't exist
         }
