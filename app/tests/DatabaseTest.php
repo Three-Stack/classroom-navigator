@@ -175,6 +175,9 @@ class DatabaseTest extends TestCase {
 
             $stmt = $db->prepare("INSERT INTO `classes` (`class_id`, `section`, `class_nbr`, `capacity`, `class_name`, `units`, `start_time`, `end_time`, `days`, `location`, `start_date`, `end_date`, `session`, `instructor`, `mode`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             $stmt->execute(array($classID, $section, $classNum, $capacity, $className, $units, $startTime, $endTime, $days, $location, $startDate, $endDate, $session, $instructor, $mode));
+
+            file_put_contents("/app/tmp_{$i}.txt", "INSERT INTO `classes` (`class_id`, `section`, `class_nbr`, `capacity`, `class_name`, `units`, `start_time`, `end_time`, `days`, `location`, `start_date`, `end_date`, `session`, `instructor`, `mode`) VALUES ('".implode("', '", array($classID, $section, $classNum, $capacity, $className, $units, $startTime, $endTime, $days, $location, $startDate, $endDate, $session, $instructor, $mode))."');");
+            $i++;
         }
 
         /* DEBUG file_put_contents("/app/tmp.txt", print_r($res, true));*/

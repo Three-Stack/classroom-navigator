@@ -4,7 +4,7 @@
  * This is not public-facing so it can't be run from a controller.
  */
 
-require_once(__DIR__ . "/../bootstrap.php");
+require_once(__DIR__ . "/DBConnection.php");
 
 class ClassLoader {
     // Semesters are defined by number with no discernible pattern... these will have to be updated over time

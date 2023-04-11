@@ -52,7 +52,7 @@ if($controller !== "" && $method !== "") {
     $("#result_list").empty();
     var name = $('#name_search').val();
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("GET", "http://127.0.0.1/Test/getClassInfo?class=" + name, false);
+    xmlHttp.open("GET", "http://ec2-3-143-241-55.us-east-2.compute.amazonaws.com/Test/getClassInfo?class=" + name, false);
     xmlHttp.send(null);
     res = xmlHttp.responseText;
     const obj = JSON.parse(res);

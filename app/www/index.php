@@ -91,7 +91,7 @@ if($controller !== "" && $method !== "") {
   <body>
     
 <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">Classroom Navigator</a>
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">Test</a>
   <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -159,7 +159,7 @@ if($controller !== "" && $method !== "") {
       </div>
 
       <!-- <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas> -->
-      <img src="https://assets.concept3d.com/assets/1130/1130_Map_2/15/5659/19684" alt="map of school" width="600" height="600">
+      <img src="/images/map.png" alt="map" width="1000">
 
     </main>
   </div>
