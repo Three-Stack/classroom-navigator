@@ -79,7 +79,7 @@ if($controller !== "" && $method !== "") {
 <body>
   <h1>Welcome to Classroom Navigator</h1>
   <div>
-    <input id="test2 name_search" type="text"></input>
+    <input id="test3 name_search" type="text"></input>
     <button class="btn btn-primary" onclick="search()">Search</button>  
   </div>
   <div>
