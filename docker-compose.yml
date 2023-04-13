@@ -12,7 +12,7 @@ services:
         container_name: tester-php
         build:
             context: .
-            dockerfile: php-dockerfile
+            dockerfile: Dockerfile
         volumes:
             - ./app:/app
     mysql:
