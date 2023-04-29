@@ -25,6 +25,7 @@ class ClassLoader {
         }
         else {
             echo "ERROR: Term '{$term}' not recognized as a valid semester.\n";
+            echo "Examples of valid terms: spring_2023, summer_2023, fall_2024, winter_2024\n";
             return;
         }
 
@@ -137,13 +138,8 @@ class ClassLoader {
             $instructor = $arr[19];
             $mode = $arr[21];
 
-            $results = "classID: {$classID} | section: {$section} | classNum: {$classNum} | capacity: {$capacity} | classname: {$className} | units: {$units}"
-            . "| days: {$days} | starttime: {$startTime} | endtime: {$endTime} | location: {$location} | startdate: {$startDate} | enddate: {$endDate} | session: {$session}"
-            . "| instructor: {$instructor} | mode: {$mode}";
-
             // Insert into DB
             $db = DBConnection::db();
-            $db->exec("DROP TABLE IF EXISTS `classes_test`");
 
             $stmt = $db->prepare("INSERT INTO `classes` (`class_id`, `section`, `class_nbr`, `capacity`, `class_name`, `units`, `start_time`, `end_time`, `days`, `location`, `start_date`, `end_date`, `session`, `instructor`, `mode`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             $stmt->execute(array($classID, $section, $classNum, $capacity, $className, $units, $startTime, $endTime, $days, $location, $startDate, $endDate, $session, $instructor, $mode));
