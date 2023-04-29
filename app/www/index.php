@@ -25,7 +25,7 @@ if($controller !== "" && $method !== "") {
 <link href="headerstyle.css" rel="stylesheet">
 <link href="homepage.css" rel="stylesheet">
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
+<script src="homescript.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
 <body onLoad="floorPlans()">
@@ -50,7 +50,7 @@ if($controller !== "" && $method !== "") {
          <div class="leftside">
             <nav>
                <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                  <a class="nav-link nav-fill active" id="nav-classroom-tab" data-bs-toggle="tab" href="#nav-classroom" role="tab" aria-controls="nav-classroom" aria-selected="true">ClassRoom</a>
+                  <a class="nav-link nav-fill active" id="nav-classroom-tab" data-bs-toggle="tab" href="#nav-classroom" role="tab" onclick="im('bhome')" aria-controls="nav-classroom" aria-selected="true">ClassRoom</a>
                   <a class="nav-link" id="nav-map-tab" data-bs-toggle="tab" href="#nav-map" role="tab" aria-controls="nav-map" aria-selected="false">Floor Plan</a>
                </div>
             </nav>
@@ -92,9 +92,9 @@ if($controller !== "" && $method !== "") {
                      <nav>
                         <ul class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
                            <!-- <a class="nav-link nav-fill active" id="nav-classroom-tab" data-bs-toggle="tab" href="#nav-classroom" role="tab" aria-controls="nav-classroom" aria-selected="true">ClassRoom</a> -->
-                           <li class="nav-item dropdown">
+                           <li class="nav-item dropdown text-center">
                               <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" id="nav-building" href="#nav-building" role="button" aria-haspopup="true" aria-expanded="false">Building</a>
-                              <div class="dropdown-menu">
+                              <div class="dropdown-menu dropdown-menu-center">
                                  <a class="dropdown-item" data-bs-toggle="tab" href="#nav-Building8" role="tab" aria-controls="nav-Building8" aria-selected="false">Building 8</a>
                                  <a class="dropdown-item" data-bs-toggle="tab" href="#nav-Building9" role="tab" aria-controls="nav-Building9" aria-selected="false">Building 9</a>
                               </div>
@@ -103,24 +103,20 @@ if($controller !== "" && $method !== "") {
                      </nav>
                      <div class="tab-content" id="nav-building">
                         <div class="tab-pane" id="nav-Building8" role="tabpanel" aria-labelledby="nav-Building8">
-                           <div class="text-center">
-                              <h1>Building8</h1><br>
-                              <p><button type="button" class="btn btn-primary btn-lg">Floor 1</button></p><br>
-                              <p><button type="button" class="btn btn-primary btn-lg">Floor 2</button></p><br>
-                              <p><button type="button" class="btn btn-primary btn-lg">Floor 3</button></p><br>
-                              <p><button type="button" class="btn btn-primary btn-lg">Floor 4</button></p><br>
-                              <p><button type="button" class="btn btn-primary btn-lg">Floor 5</button></p><br>
-                           </div>
+                           <div class="column md-12 d-flex justify-content-center"><h1>Building8</h1></div>
+                           <div class="column md-12 d-flex justify-content-center"><button type="button" class="btn btn-primary btn-lg" onclick="im('b81')">Floor 1</button></div>
+                           <div class="column md-12 d-flex justify-content-center"><button type="button" class="btn btn-primary btn-lg" onclick="im('b82')">Floor 2</button></div>
+                           <div class="column md-12 d-flex justify-content-center"><button type="button" class="btn btn-primary btn-lg" onclick="im('b83')">Floor 3</button></div>
+                           <div class="column md-12 d-flex justify-content-center"><button type="button" class="btn btn-primary btn-lg" onclick="im('b84')">Floor 4</button></div>
+                           <div class="column md-12 d-flex justify-content-center"><button type="button" class="btn btn-primary btn-lg" onclick="im('b85')">Floor 5</button></div>
                         </div>
                         <div class="tab-pane" id="nav-Building9" role="tabpanel" aria-labelledby="nav-Building9">
-                           <div class="text-center">
-                              <h1>Building9</h1><br>
-                              <p><button type="button" class="btn btn-primary btn-lg" onclick="">Floor 1</button></p><br>
-                              <p><button type="button" class="btn btn-primary btn-lg">Floor 2</button></p><br>
-                              <p><button type="button" class="btn btn-primary btn-lg">Floor 3</button></p><br>
-                              <p><button type="button" class="btn btn-primary btn-lg">Floor 4</button></p><br>
-                              <p><button type="button" class="btn btn-primary btn-lg">Floor 5</button></p><br>
-                           </div>
+                           <div class="column md-12 d-flex justify-content-center"><h1>Building9</h1></div>
+                           <div class="column md-12 d-flex justify-content-center"><button type="button" class="btn btn-primary btn-lg" onclick="im('b91');">Floor 1</button></div>
+                           <div class="column md-12 d-flex justify-content-center"><button type="button" class="btn btn-primary btn-lg" onclick="im('b92')">Floor 2</button></div>
+                           <div class="column md-12 d-flex justify-content-center"><button type="button" class="btn btn-primary btn-lg" onclick="im('b93')">Floor 3</button></div>
+                           <div class="column md-12 d-flex justify-content-center"><button type="button" class="btn btn-primary btn-lg" onclick="im('b94')">Floor 4</button></div>
+                           <div class="column md-12 d-flex justify-content-center"><button type="button" class="btn btn-primary btn-lg" onclick="im('b95')">Floor 5</button></div>
                         </div>
                      </div>
                   </div>
@@ -130,7 +126,7 @@ if($controller !== "" && $method !== "") {
       </div>
       <div class="col-md-8 no-gutters">
          <div class="rightside">
-            <img src="/images/map.png" alt="Map of CPP Quad" class ="img-fluid">          
+            <img id="b" src="/images/map.png" alt="Map of CPP Quad" class ="img-fluid">          
          </div>
       </div>
    </div>
