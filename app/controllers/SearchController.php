@@ -97,12 +97,15 @@ class SearchController extends BaseController {
             if(empty($row)) {
                 return;
             }
-            $this->setResponse(array(
+            $this->setResponse($array = array(
                 "classname" => $classname,
                 "time" => $time,
                 "instructor" => $instructor,
                 "room_info" => $row));
         }
+
+        $lt = new LineTestController();
+        $lt->drawLines($row);
         return;
     }
 }

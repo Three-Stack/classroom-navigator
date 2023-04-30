@@ -59,8 +59,9 @@ class LineTestController extends BaseController {
       $floor = $params["floor"];
       $map = '/../www/images/8-1-Overall.png';
 
-      $map = '/../www/images/{$build}-{$floor}-Overall.png';
+      $map = "/../www/images/{$build}-{$floor}-Overall.png";
 
+      //load the base map
       //load the base map
       $img = $manager->make(__DIR__.$map);
 
