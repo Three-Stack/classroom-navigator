@@ -50,5 +50,46 @@ class LineTestController extends BaseController {
       else{
          $this->setResponse("The Color at x=".$x." and y=".$y." is ".$col);
       }
+
+   }
+   
+   public function drawLines($params){
+      $manager = new ImageManager(['driver' => 'imagick']);
+      $build = $params["building"];
+      $floor = $params["floor"];
+      $map = '/../www/images/8-1-Overall.png';
+
+      $map = '/../www/images/{$build}-{$floor}-Overall.png';
+
+      //load the base map
+      $img = $manager->make(__DIR__.$map);
+
+      //write the lines 
+      $img->line($params["x1"], $params["y1"], $params["x2"], $params["y2"], function($draw) {
+         $draw->color('#f00');
+         $draw->width(5);
+      });
+      $img->line($params["x3"], $params["y3"], $params["x4"], $params["y4"], function($draw) {
+         $draw->color('#f00');
+         $draw->width(5);
+      });
+      $img->line($params["x5"], $params["y5"], $params["x6"], $params["y6"], function($draw) {
+         $draw->color('#f00');
+         $draw->width(5);
+      });
+      $img->line($params["x6"], $params["y6"], $params["x7"], $params["y7"], function($draw) {
+         $draw->color('#f00');
+         $draw->width(5);
+      });
+      if($params['x8'] != NUll)
+      {
+         $img->line($params["x7"], $params["y7"], $params["x8"], $params["y8"], function($draw) {
+            $draw->color('#f00');
+            $draw->width(5);
+         });
+      }
+
+      //save to the image that will be loaded
+      $img->save(__DIR__.'/../www/images/loadMap.png');
    }
 }
