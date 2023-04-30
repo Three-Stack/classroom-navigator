@@ -1,8 +1,7 @@
 .leftside{
    height:5vh;
    width: 100%;
-   background: blue;
-   color: white;
+   background: rgb(255, 255, 255);
 }
 .rightside{
    height:5vh;

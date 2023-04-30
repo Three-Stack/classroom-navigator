@@ -135,7 +135,13 @@ class ClassLoader {
             $startDate = $dates[0];
             $endDate = $dates[1];
             $session = $arr[17];
-            $instructor = $arr[19];
+            $instructor = explode(",", $arr[19]);
+            if(empty($instructor[1])) {
+                $instructor = $instructor[0];
+            }
+            else {
+                $instructor = $instructor[1] . ' ' . $instructor[0];
+            }
             $mode = $arr[21];
 
             // Insert into DB
