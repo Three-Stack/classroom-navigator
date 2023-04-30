@@ -6,6 +6,7 @@ const row = document.createElement('row')
 row.className="row m-auto text-center w-75";
 container.append(row);
 const url = 'data.json';
+var i=1;
 window.addEventListener('DOMContentLoaded',()=>{
    loadData();
 })
@@ -21,7 +22,15 @@ function addtoPage(arr){
    arr.forEach((el)=>{
       console.log(el);
       const pricingitem = document.createElement('div');
-      pricingitem.className="col-12 princing-item red";
+      if (i%3==1){
+         pricingitem.className="col-12 princing-item red";
+      }
+      else if (i%3==2){
+         pricingitem.className="col-12 princing-item blue";
+      }
+      else if (i%3==0){
+         pricingitem.className="col-12 princing-item green";
+      }
       const pricingdivider = document.createElement('div');
       pricingdivider.className= "pricing-divider";
       pricingitem.append(pricingdivider);
@@ -32,9 +41,9 @@ function addtoPage(arr){
       const h4= document.createElement('h4');
       h4.className="my-0 display-4 text-light font-weight-normal mb-3"
       h4.textContent=el.class_name;
-      h3.append(h4);
-      const svg = document.createElement('svg');
-      svg.className='pricing-divider-img'
+      pricingdivider.append(h4);
+      const svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
+      svg.setAttribute('class','pricing-divider-img');
       svg.setAttribute('enable-background','new 0 0 300 100');
       svg.setAttribute('height','100px');
       svg.setAttribute('preserveAspectRatio','none');
@@ -47,32 +56,35 @@ function addtoPage(arr){
       svg.setAttribute('xmlns','http://www.w3.org/2000/svg');
       svg.setAttribute('y','0px');
       svg.setAttribute('id','Layer_1');
-      
-
       pricingdivider.append(svg);
-      path1=document.createElement('path');
-      path1.className='deco-layer deco-layer--1';
-      path1.setAttribute('d','M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z');
+      
+      const path1=document.createElementNS('http://www.w3.org/2000/svg','path');
+      path1.setAttribute('class','deco-layer deco-layer--1');
+      path1.setAttribute('d',
+      'M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z');
       path1.setAttribute('fill','#FFFFFF');
       path1.setAttribute('opacity','0.6');
-      svg.append(path1);
-      path2=document.createElement('path');
-      path2.className='deco-layer deco-layer--2';
-      path2.setAttribute('d','M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z');
+      svg.appendChild(path1);
+      const path2=document.createElementNS('http://www.w3.org/2000/svg','path');
+      path2.setAttribute('class','deco-layer deco-layer--2');
+      path2.setAttribute('d',
+      'M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z');
       path2.setAttribute('fill','#FFFFFF');
       path2.setAttribute('opacity','0.6');
-      svg.append(path2);
-      path3=document.createElement('path');
-      path3.className='deco-layer deco-layer--3' 
-      path3.setAttribute('d','M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716H42.401L43.415,98.342z');
+      svg.appendChild(path2);
+      const path3=document.createElementNS('http://www.w3.org/2000/svg','path');
+      path3.setAttribute('class','deco-layer deco-layer--3');
+      path3.setAttribute('d',
+      'M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716  H42.401L43.415,98.342z');
       path3.setAttribute('fill','#FFFFFF');
       path3.setAttribute('opacity','0.7');
-      svg.append(path3);
-      path4=document.createElement('path');
-      path4.className='deco-layer deco-layer--4'
-      path4.setAttribute('d','M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z');
+      svg.appendChild(path3);
+      const path4=document.createElementNS('http://www.w3.org/2000/svg','path');
+      path4.setAttribute('class','deco-layer deco-layer--4');
+      path4.setAttribute('d',
+      'M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z');
       path4.setAttribute('fill','#FFFFFF');
-      svg.append(path4);
+      svg.appendChild(path4);
       const cardbody=document.createElement('div');
       cardbody.className="card-body bg-white mt-0 shadow";
       pricingitem.append(cardbody);
@@ -105,7 +117,7 @@ function addtoPage(arr){
       ul.append(space);
       row.append(pricingitem);
       console.log(pricingitem)
-      
+      i++;
    });
 }
 
