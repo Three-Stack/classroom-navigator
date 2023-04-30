@@ -65,4 +65,44 @@ class SearchController extends BaseController {
         }
         $this->setResponse($row);
     }
+
+    /**
+     * Gets room info from class
+     * Required parameters:
+     *  - Class name
+     *  - Location
+     *  - Time
+     *  - Instructor
+     */
+    public function getRoomInfo($params) {
+        $this->setResponse(print_r($params, true)); // Default failure response
+        if(empty($params["classname"] || $params["location"] || $params["time"] || $params["instructor"])) {
+            // Invalid parameters
+            return;
+        }
+        $classname = $params["classname"];
+        $location = $params["location"];
+        $time = $params["time"];
+        $instructor = $params["instructor"];
+
+        $room_info = explode(" ", $location);
+        $building = $room_info[1];
+        $classroom_nbr = $room_info[3];
+        if(!empty($building) && !empty($classroom_nbr)) {
+            $db = DBConnection::db();
+            $query = "SELECT building,floor,x1,y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6,x7,y7,x8,y8 FROM classrooms WHERE `building` = ? AND `classroom_nbr` = ?";
+            $stmt = $db->prepare($query);
+            $stmt->execute(array($building, $classroom_nbr));
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            if(empty($row)) {
+                return;
+            }
+            $this->setResponse(array(
+                "classname" => $classname,
+                "time" => $time,
+                "instructor" => $instructor,
+                "room_info" => $row));
+        }
+        return;
+    }
 }

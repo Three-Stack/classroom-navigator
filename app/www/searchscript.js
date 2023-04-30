@@ -111,6 +111,9 @@ function addtoPage(arr){
          button.className="btn btn-lg btn-block  btn-custom";
       }
       button.textContent="Search";
+      button.addEventListener("click", function() {
+         window.location.href = "Search/getRoomInfo?classname="+el.class_name+"&location="+el.location+"&time="+el.start_time+"&instructor="+el.instructor;
+      });
       ul.append(button);
       const space =document.createElement("li");
       space.innerHTML="<br>";

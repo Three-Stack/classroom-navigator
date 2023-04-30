@@ -20,13 +20,13 @@ try {
    $method = !empty($path[2]) ? $path[2] : "";      // get the method name
    parse_str($uri["query"], $params);  // get any parameters
    
-
    // Run the controller's method and output the response
 
    if($controller !== "" && $method !== "") {
       ControllerLoader::Run($controller, $method, $params);
    }
 } catch(Exception $e) {
+   print_r($e);
    // Invalid request - do nothing
 }
 ?>

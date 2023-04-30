@@ -140,7 +140,7 @@ class ClassLoader {
                 $instructor = $instructor[0];
             }
             else {
-                $instructor = $instructor[1] . ' ' . $instructor[0];
+                $instructor = trim($instructor[1] . ' ' . $instructor[0]);
             }
             $mode = $arr[21];
 
