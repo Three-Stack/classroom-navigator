@@ -17,7 +17,7 @@ If you want to visit our website, you can do so at [cppnavigator.com](https://ww
 
 This project was created as a group project with various assignments to complete tasks and write code unrelated to the project. We've tried to remove all unrelated and unused code from this project, but there's probably some remaining in the main code base and you can find a lot in the commit history.\
 \
-This project is managed by Docker, a dependency manager so we can deploy on a server easily. The project is currently deployed on an Amazon EC2 server.\
+This project is managed by Docker, a dependency manager so we can deploy on a server easily. The project is currently deployed on an Amazon EC2 server.
 
 ## About the data
 
