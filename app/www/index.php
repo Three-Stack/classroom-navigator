@@ -40,24 +40,23 @@ try {
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="homescript.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-<body onLoad="floorPlans()">
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color:aquamarine">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-          <a class="nav-link" href="#">Features</a>
-          <a class="nav-link" href="#">Pricing</a>
-          <a class="nav-link disabled">Disabled</a>
-         </div>
-      </div>
+<!-- <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script> -->
+<body class="body-content" onLoad="floorPlans()">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-light" style="background-color:white">
+    <div class="container-fluid shadow">
+       <a class="navbar-brand" href="#">Classroom Navigator</a>
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+          <ul class="navbar-nav">
+             <li class="nav-item active"><a class="nav-link" href="about.html">About</a></li>
+             <li class="nav-item"><a class="nav-link" href="index.php">Search</a></li>
+          </ul>
+       </div>
     </div>
-   </nav>
+ </nav>
+
    <div class="row no-gutters">
       <div class="col-md-4 no-gutters">
          <div class="leftside">

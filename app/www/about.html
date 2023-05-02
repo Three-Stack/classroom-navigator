@@ -15,21 +15,25 @@
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
   </head>
 </head>
-<body>
 
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-    <a href="#home" class="w3-bar-item w3-button text-light font-weight-normal"><b>Classroom</b> Navigator</a>
-    <!-- Float links to the right. Hide them on small screens -->
-    <div class="w3-right w3-hide-small">
-      <a href="#projects" class="w3-bar-item w3-button">Projects</a>
-      <a href="#about" class="w3-bar-item w3-button">About</a>
-      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+
+
+<body class="body-content">
+  <!-- Navbar (sit on top) -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-light" style="background-color:white">
+    <div class="container-fluid shadow ">
+       <a class="navbar-brand" href="about.html">Classroom Navigator</a>
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+          <ul class="navbar-nav">
+             <li class="nav-item active"><a class="nav-link" href="about.html">About</a></li>
+             <li class="nav-item"><a class="nav-link" href="index.php">Search</a></li>
+          </ul>
+       </div>
     </div>
-  </div>
-</div>
-
+ </nav>
 <!-- Header -->
 <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
   <img class="w3-image" src="/images/Aerial-quad.jpeg" alt="Architecture" width="1500" height="800">
@@ -43,12 +47,28 @@
 
   <!-- About Section -->
   <div class="w3-container w3-padding-32" id="about">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16 text-light font-weight-normal">About</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
-      occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-      laboris nisi ut aliquip ex ea commodo consequat.
+    <h3 class="w3-border-bottom w3-border-black w3-padding-16 text-dark font-weight-normal">About</h3>
+    <p>Have you ever gotten to school on time at the start of a new semester, found the building of your first class, 
+      and then spent 20 minutes walking in circles trying to find your classroom? Room numbers in the buildings at Cal Poly Pomona 
+      can be confusing and unintuitive, making it difficult to find your class for the first time.Classroom Navigator, 
+      or cppnavigator, is a tool we built to navigate the buildings and classrooms of Cal Poly Pomona. Our tool contains a search 
+      functionality to narrow down and find your exact class. Once your find your class, you can explore the floor plan of the 
+      building and get exact directions to your classroom.
     </p>
   </div>
+   <!-- About Section -->
+   <div class="w3-container w3-padding-32" id="about">
+    <h3 class="w3-border-bottom w3-border-black w3-padding-16 text-dark font-weight-normal">How does it work?</h3>
+    <p>We get class information for each semester from public search functions. If you've ever used Cal Poly Pomona's class search, 
+      you've probably found it to be incredibly slow and frustrating.  Luckily, we do all the class searching and processing for you. 
+      You can use our search tool to search for and get information about Cal Poly Pomona classes, even if you're not looking for directions. 
+      Our search tool is much faster, so you can search the Cal Poly Pomona class databse quickly and easily.  To display directions, we use floor 
+      plans of each building. Unfortunately, these floor plans are not publicly available. We were only able to get floor plans for Buildings 8 and 9 
+      for now.  This means that our search tool covers all classes at Cal Poly Pomona, but our direction tool only works for classes in Buildings 8 and 9. 
+      Once we obtain floor plans for more buildings, this tool may be updated in the future.  
+    </p>
+  </div>
+  
 
   <!--Contributers-->
   <div class="container-fluid bg-gradient p-5">
