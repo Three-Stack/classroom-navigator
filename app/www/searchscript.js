@@ -96,6 +96,7 @@ function addtoPage(arr){
       ul.append(li1);
       const li2=document.createElement('li');
       li2.innerHTML=`<b>Location: </b> ${el.location}`;
+      // console.log(el.location)
       ul.append(li2);
       const li3=document.createElement('li');
       li3.innerHTML=`<b>Time: </b> ${el.days} ${el.start_time} - ${el.end_time}`;
@@ -104,7 +105,9 @@ function addtoPage(arr){
       li4.innerHTML=`<b>Mode: </b> ${el.mode}`;
       ul.append(li4);
       const button = document.createElement('button')
-      if(el.location =="Online"){
+      const bld = el.location.split(' ');
+      console.log(bld[1])
+      if(el.location =="Online" || !(bld[1]==8 ||bld[1]==9 )){
          button.className="btn btn-lg btn-block  btn-custom disabled";
       }
       else{
