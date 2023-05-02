@@ -159,7 +159,7 @@ try {
       </div>
       <div class="col-md-8 no-gutters">
          <div class="rightside">
-            <img id="b" src="/images/map.png" alt="Map of CPP Quad" class ="img-fluid">          
+            <img id="b" src="/images/MAP_Center.png" alt="Map of CPP Quad" class ="img-fluid">          
          </div>
       </div>
    </div>
