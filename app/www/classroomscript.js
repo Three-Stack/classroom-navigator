@@ -11,7 +11,7 @@ const output = document.querySelector('.output');
 const leftside = document.createElement('div');
 leftside.className="leftside";
 output.append(leftside);
-const url = '/Search/getClassInfo' + window.location.search;
+const url = '/Search/getRoomInfo' + window.location.search;
 var i=1;
 window.addEventListener('DOMContentLoaded',()=>{
    loadData();
