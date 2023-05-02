@@ -90,7 +90,7 @@ class SearchController extends BaseController {
         $classroom_nbr = $room_info[3];
         if(!empty($building) && !empty($classroom_nbr)) {
             $db = DBConnection::db();
-            $query = "SELECT building,floor,x1,y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6,x7,y7,x8,y8 FROM classrooms WHERE `building` = ? AND `classroom_nbr` = ?";
+            $query = "SELECT classroom_nbr,building,floor,x1,y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6,x7,y7,x8,y8 FROM classrooms WHERE `building` = ? AND `classroom_nbr` = ?";
             $stmt = $db->prepare($query);
             $stmt->execute(array($building, $classroom_nbr));
             $row = $stmt->fetch(PDO::FETCH_ASSOC);

@@ -55,11 +55,17 @@ class LineTestController extends BaseController {
    
    public function drawLines($params){
       $manager = new ImageManager(['driver' => 'imagick']);
+      $number = $params["classroom_nbr"];
       $build = $params["building"];
       $floor = $params["floor"];
       $map = '/../www/images/8-1-Overall.png';
 
+      
       $map = "/../www/images/{$build}-{$floor}-Overall.png";
+      if(file_exists(__DIR__."/../www/images/loadMap_{$build}_{$floor}_{$number}.png"))
+      {
+         return "/../www/images/loadMap_{$build}_{$floor}_{$number}.png";
+      }
 
       //load the base map
       //load the base map
@@ -91,6 +97,8 @@ class LineTestController extends BaseController {
       }
 
       //save to the image that will be loaded
-      $img->save(__DIR__.'/../www/images/loadMap.png');
+      $img->save(__DIR__."/../www/images/loadMap_{$build}_{$floor}_{$number}.png");
+
+      return("/../www/images/loadMap_{$build}_{$floor}_{$number}.png");
    }
 }
