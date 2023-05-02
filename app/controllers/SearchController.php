@@ -9,8 +9,21 @@ class SearchController extends BaseController {
     public function getClassInfo($params) {
         $this->setResponse(print_r($params, true)); // Default failure response
         $changed = false;
+
+        if(empty($params["term"])) {
+            // No term passed in
+            return;
+        }
+        $term = $params["term"];
+        $table = "classes_{$term}";
+        $term = 'ClassLoader::' . strtoupper($term);
+        if(!defined($term)) {
+            // This term isn't valid
+            return;
+        }
         
-        $query = "SELECT * FROM `classes` WHERE ";
+        $query = "SELECT * FROM `{$table}` WHERE ";
+        $class = array();
 
         if(!empty($params["class"])) {
             if($changed) {
@@ -49,13 +62,10 @@ class SearchController extends BaseController {
         }
         
         if(!$changed) {
-            // Nothing passed in, don't even bother querying the database with nothing
-            return;
+            // Nothing passed in, just return everything (can change this if problems later)
+            $query .= "1";
         }
 
-        // Limit 100 for now so people don't blow up the database by searching for everything at the same time
-        $query .= " LIMIT 100";
-        $this->setResponse($query);
         $db = DBConnection::db();
         $stmt = $db->prepare($query);
         $stmt->execute($class);

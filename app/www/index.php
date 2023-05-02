@@ -26,7 +26,6 @@ try {
       ControllerLoader::Run($controller, $method, $params);
    }
 } catch(Exception $e) {
-   print_r($e);
    // Invalid request - do nothing
 }
 ?>
@@ -101,6 +100,19 @@ try {
                         <div class="col-sm-7 d-flex justify-content-start">
                         <input type="text" class="form-control " id="instuctor" aria-describedby="classNumber" name="instructor"
                            placeholder="ex. Yu Sun"/>
+                        </div>
+                     </div>
+                     <br>
+                     <div class="form-group row">
+                        <label for="term" class="col-sm-4 col-form-label d-flex justify-content-end">Term</label>
+                        <div class="col-sm-7 d-flex justify-content-start">
+                        <select class="form-control " id="instuctor" aria-describedby="classNumber" name="term">
+                        <option value="spring_2023">Spring 2023</option>
+                        <option value="summer_2023">Summer 2023</option>
+                        <option value="fall_2023">Fall 2023</option>
+                        <option value="winter_2024">Winter 2024</option>
+                        <option value="spring_2024">Spring 2024</option>
+                        </select>
                         </div>
                      </div>
                      <br>

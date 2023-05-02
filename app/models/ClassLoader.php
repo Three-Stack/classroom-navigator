@@ -17,8 +17,10 @@ class ClassLoader {
     /**
      * Loads the classes for a semester
      * Term needs to be a string, one of the consts defined above
+     * Overwrite: whether the table is destroyed and rebuilt from scratch or not.
      */
-    public static function load($term) {
+    public static function load($term, $overwrite = false) {
+        $table = "classes_{$term}"; // This is a custom table for each semester
         $term = 'self::' . strtoupper($term);
         if(defined($term)) {
             $term = constant($term);
@@ -29,8 +31,16 @@ class ClassLoader {
             return;
         }
 
-        self::setUp();
         $db = DBConnection::db();
+
+        // Check if the table already exists
+        $res = $db->query("SHOW TABLES LIKE '{$table}'");
+        if($res->fetch(PDO::FETCH_ASSOC) != 0 && !$overwrite) {
+            // This table already exists
+            return 1;
+        }
+
+        self::setUp($table);
 
         // Send a CURL request
         $ch = curl_init();
@@ -145,20 +155,39 @@ class ClassLoader {
             $mode = $arr[21];
 
             // Insert into DB
-            $db = DBConnection::db();
-
-            $stmt = $db->prepare("INSERT INTO `classes` (`class_id`, `section`, `class_nbr`, `capacity`, `class_name`, `units`, `start_time`, `end_time`, `days`, `location`, `start_date`, `end_date`, `session`, `instructor`, `mode`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            $stmt = $db->prepare("INSERT INTO `{$table}` (`class_id`, `section`, `class_nbr`, `capacity`, `class_name`, `units`, `start_time`, `end_time`, `days`, `location`, `start_date`, `end_date`, `session`, `instructor`, `mode`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             $stmt->execute(array($classID, $section, $classNum, $capacity, $className, $units, $startTime, $endTime, $days, $location, $startDate, $endDate, $session, $instructor, $mode));
         }
         echo "Classes loaded successfully\n";
+        return 0;
     }
     
-    // Resets the table and sets up for class loading
-    private static function setUp() {
+    // Sets up the table
+    private static function setUp($table) {
         $db = DBConnection::db();
 
-        // Reset the table
-        $db->exec("DELETE FROM `classes`");
-        $db->exec("ALTER TABLE `classes` AUTO_INCREMENT = 0");   
+        $db->exec("DROP TABLE IF EXISTS `{$table}`");
+        $db->exec(
+        "CREATE TABLE `{$table}` (
+            `id` INT(255) NOT NULL AUTO_INCREMENT,
+            `class_id` VARCHAR(10) DEFAULT NULL,
+            `section` VARCHAR(10) DEFAULT NULL,
+            `class_nbr` VARCHAR(10) DEFAULT NULL,
+            `capacity` INT(11) DEFAULT NULL,
+            `class_name` VARCHAR(255) DEFAULT NULL,
+            `units` VARCHAR(5) DEFAULT NULL,
+            `start_time` VARCHAR(50) DEFAULT NULL,
+            `end_time` VARCHAR(50) DEFAULT NULL,
+            `days` VARCHAR(10) DEFAULT NULL,
+            `location` VARCHAR(255) DEFAULT NULL,
+            `start_date` DATE DEFAULT NULL,
+            `end_date` DATE DEFAULT NULL,
+            `session` VARCHAR(255) DEFAULT NULL,
+            `instructor` VARCHAR(255) DEFAULT NULL,
+            `mode` VARCHAR(255) DEFAULT NULL,
+            PRIMARY KEY (`id`)
+        )");
+
+        $db->exec("ALTER TABLE `{$table}` AUTO_INCREMENT = 0");   
     }
 }
