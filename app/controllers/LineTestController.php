@@ -59,7 +59,6 @@ class LineTestController extends BaseController {
       $build = $params["building"];
       $floor = $params["floor"];
       $map = '/../www/images/8-1-Overall.png';
-
       
       $map = "/../www/images/{$build}-{$floor}-Overall.png";
       if(file_exists(__DIR__."/../www/loadMap/loadMap_{$build}_{$floor}_{$number}.png"))
@@ -95,6 +94,7 @@ class LineTestController extends BaseController {
             $draw->width(5);
          });
       }
+      
 
       //save to the image that will be loaded
       $img->save(__DIR__."/../www/loadmap/loadMap_{$build}_{$floor}_{$number}.png");
@@ -112,16 +112,10 @@ class LineTestController extends BaseController {
             $draw->width(5);
          });
 
-      $manager = new ImageManager(['driver' => 'imagick']);
-      $img = $manager->make(__DIR__."/../www/images/8-1-Overall.png");
-
       $img->line(3178, 2030, 3127, 2030, function($draw) {
             $draw->color('#f00');
             $draw->width(5);
          });
-
-      $manager = new ImageManager(['driver' => 'imagick']);
-      $img = $manager->make(__DIR__."/../www/images/8-1-Overall.png");
 
       $img->line(3127, 2030, 3170, 1984, function($draw) {
             $draw->color('#f00');
@@ -142,17 +136,27 @@ class LineTestController extends BaseController {
             $draw->width(5);
          });
 
-      $img->line(283, 667, 682, 667, function($draw) {
-            $draw->color('#f00');
-            $draw->width(5);
-         });
-      
-      $img->line(682, 667, 3170, 2076, function($draw) {
+      $img->line(283, 667, 342, 667, function($draw) {
+         $draw->color('#f00');
+         $draw->width(5);
+      });
+
+      $img->line(342, 667, 342, 742, function($draw) {
             $draw->color('#f00');
             $draw->width(5);
          });
 
-      $img->save(__DIR__."/../www/loadmap/loadMap_8_bottomFloor.png");
+      $img->line(342, 742, 310, 712, function($draw) {
+            $draw->color('#f00');
+            $draw->width(5);
+         });
+
+      $img->line(342, 742, 372, 712, function($draw) {
+            $draw->color('#f00');
+            $draw->width(5);
+         });
+
+      $img->save(__DIR__."/../www/loadmap/loadMap_9_bottomFloor.png");
 
    }
 }
