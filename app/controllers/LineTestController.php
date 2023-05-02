@@ -62,9 +62,9 @@ class LineTestController extends BaseController {
 
       
       $map = "/../www/images/{$build}-{$floor}-Overall.png";
-      if(file_exists(__DIR__."/../www/images/loadMap_{$build}_{$floor}_{$number}.png"))
+      if(file_exists(__DIR__."/../www/loadMap/loadMap_{$build}_{$floor}_{$number}.png"))
       {
-         return "/../www/images/loadMap_{$build}_{$floor}_{$number}.png";
+         return "/../www/loadmap/loadMap_{$build}_{$floor}_{$number}.png";
       }
 
       //load the base map
@@ -97,8 +97,62 @@ class LineTestController extends BaseController {
       }
 
       //save to the image that will be loaded
-      $img->save(__DIR__."/../www/images/loadMap_{$build}_{$floor}_{$number}.png");
+      $img->save(__DIR__."/../www/loadmap/loadMap_{$build}_{$floor}_{$number}.png");
 
-      return("/../www/images/loadMap_{$build}_{$floor}_{$number}.png");
+      return("/../www/loadmap/loadMap_{$build}_{$floor}_{$number}.png");
+   }
+
+   public function drawBottomFloor()
+   {
+      $manager = new ImageManager(['driver' => 'imagick']);
+      $img = $manager->make(__DIR__."/../www/images/8-1-Overall.png");
+
+      $img->line(3178, 2726, 3178, 2030, function($draw) {
+            $draw->color('#f00');
+            $draw->width(5);
+         });
+
+      $manager = new ImageManager(['driver' => 'imagick']);
+      $img = $manager->make(__DIR__."/../www/images/8-1-Overall.png");
+
+      $img->line(3178, 2030, 3127, 2030, function($draw) {
+            $draw->color('#f00');
+            $draw->width(5);
+         });
+
+      $manager = new ImageManager(['driver' => 'imagick']);
+      $img = $manager->make(__DIR__."/../www/images/8-1-Overall.png");
+
+      $img->line(3127, 2030, 3170, 1984, function($draw) {
+            $draw->color('#f00');
+            $draw->width(5);
+         });
+      
+      $img->line(3127, 2030, 3170, 2076, function($draw) {
+            $draw->color('#f00');
+            $draw->width(5);
+         });
+
+      $img->save(__DIR__."/../www/loadmap/loadMap_8_bottomFloor.png");
+
+      $img = $manager->make(__DIR__."/../www/images/9-1-Overall.png");
+
+      $img->line(283, 396, 283, 667, function($draw) {
+            $draw->color('#f00');
+            $draw->width(5);
+         });
+
+      $img->line(283, 667, 682, 667, function($draw) {
+            $draw->color('#f00');
+            $draw->width(5);
+         });
+      
+      $img->line(682, 667, 3170, 2076, function($draw) {
+            $draw->color('#f00');
+            $draw->width(5);
+         });
+
+      $img->save(__DIR__."/../www/loadmap/loadMap_8_bottomFloor.png");
+
    }
 }
