@@ -34,13 +34,15 @@ try {
 <html>
 <head>
 <title>CPPNavigator</title>
+<link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32" />
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 <link href="headerstyle.css" rel="stylesheet">
 <link href="homepage.css" rel="stylesheet">
+</head>
 <body class="body-content" onLoad="floorPlans()">
-<nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-light" style="background-color:#91e0ff">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-light" style="background-color:#00843D">
     <div class="container-fluid">
-      <img src="images/cpp_nav.png" height=40 width=40>
+      <img src="images/cpp_nav.png" height=50 width=50>
        <a class="navbar-brand" href="index.php"> <span class="bg">CPP</span> Navigator</a>
        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
@@ -197,7 +199,6 @@ try {
       </div>
    </div>
 </body>
-</head>
 <script src="homescript.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>

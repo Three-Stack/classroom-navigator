@@ -1,10 +1,12 @@
 .body-content {
-  margin-top: 60px;
+  margin-top: 80px;
 }
 .text-size{
   font-size: medium;
 }
-
+.brand-size{
+  font-size: large;
+}
 .bg 
 {
     background-color: black;
