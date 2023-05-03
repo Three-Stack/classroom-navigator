@@ -1,7 +1,14 @@
 function preLoad(data) {
   a1 = new Image; 
   a2 = new Image; 
-  a1.src = `loadmap/loadMap_${data.room_info.building}_bottomFloor.png`
+  if(data.room_info.floor!=1)
+  {  
+    a1.src = `loadmap/loadMap_${data.room_info.building}_bottomFloor.png`
+  }
+  else
+  {
+    a1.src = `loadmap/loadMap_${data.room_info.building}_${data.room_info.floor}_${data.room_info.classroom_nbr}.png`
+  }
   a2.src = `loadmap/loadMap_${data.room_info.building}_${data.room_info.floor}_${data.room_info.classroom_nbr}.png`
 }
 function im(image) {
@@ -50,7 +57,15 @@ function addtoPage(data){
   const imgout = document.querySelector('.imgout');
   const img = document.createElement('img');
   img.setAttribute('id',"a");
-  img.setAttribute('src',`loadmap/loadMap_${data.room_info.building}_bottomFloor.png`);
+  console.log(data.room_info.floor)
+  if(data.room_info.floor!=1)
+  {  
+    img.setAttribute('src',`loadmap/loadMap_${data.room_info.building}_bottomFloor.png`);
+  }
+  else
+  {
+    img.setAttribute('src',`loadmap/loadMap_${data.room_info.building}_${data.room_info.floor}_${data.room_info.classroom_nbr}.png`);
+  }
   if(sessionStorage.getItem("color") !=null){
     img.setAttribute('class',`img-shrink img-${sessionStorage.getItem("color")}`)
   }
