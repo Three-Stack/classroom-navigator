@@ -4,3 +4,10 @@
 .text-size{
   font-size: medium;
 }
+
+.bg 
+{
+    background-color: black;
+    color:white;
+    padding: 5px; /*add this if you want a bit of space around the text*/
+}

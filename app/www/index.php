@@ -41,7 +41,7 @@ try {
 <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-light" style="background-color:white">
     <div class="container-fluid">
       <img src="images/cpp_nav.png" height=40 width=40>
-       <a class="navbar-brand" href="index.php">CPP Navigator</a>
+       <a class="navbar-brand" href="index.php"> <span class="bg">Cpp</span> Navigator</a>
        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
       </button>
