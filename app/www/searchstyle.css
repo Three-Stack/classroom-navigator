@@ -9,6 +9,7 @@
    .pricing-divider {
    border-radius: 20px;
    background: #C64545;
+   /* height: 45vh; */
    padding: 1em 0 4em;
    position: relative;
    }
@@ -38,9 +39,15 @@
       -webkit-transition: -webkit-transform 0.5s;
       transition: transform 0.5s;
    }
-   .btn-custom  {
+   .btn-red  {
      background:#C64545; color:#fff; border-radius:20px
    }
+   .btn-blue  {
+    background:#2D5772; color:#fff; border-radius:20px
+  }
+  .btn-green  {
+    background:#1AA85C; color:#fff; border-radius:20px
+  }
    
    .img-float {
      width:50px; position:absolute;top:-3.5rem;right:1rem

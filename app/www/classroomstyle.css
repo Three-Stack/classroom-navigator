@@ -1,37 +1,31 @@
 .leftside{
    height:5vh;
    width: 100%;
+   margin-left: 5%;
    background: rgb(255, 255, 255);
 }
 .rightside{
    height:5vh;
    width: 100%;
+   margin-right: 5%;
    background: white;
 }
 
-/* @media screen and (min-width:768px) {
-   .leftside,.rightside{
-      height: 100vh;   
-   }
-   
-} */
 
-.nav-pills .nav-link {
-   color: #2f3c4e !important;
-   margin: auto 15px;
-   border: 1px solid #e9ecef;
- }
- 
- .nav-pills .nav-link.active {
-   background-color: #f89d36;
-   color: #ffffff !important;
-   -webkit-box-shadow: 0 0 3px rgba(47, 60, 78, 0.15);
-           box-shadow: 0 0 3px rgba(47, 60, 78, 0.15);
- }
- 
- .nav-pills a .screenshot .title {
-   font-size: 18px;
+ .img-shrink{
+   max-width: 90%;
+   margin-left: 5%;
  }
 
-
- 
+ .img-red  {
+   border: 10px solid #C64545 ;
+ }
+ .img-blue {
+   border: 10px solid #2D5772;
+ }
+ .img-green{
+   border: 10px solid #1AA85C;
+ }
+ .img-dark{
+   border: 10px solid darkgray;
+ }

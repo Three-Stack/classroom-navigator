@@ -43,7 +43,7 @@ try {
 <!-- <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script> -->
 <body class="body-content" onLoad="floorPlans()">
 <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-light" style="background-color:white">
-    <div class="container-fluid shadow">
+    <div class="container-fluid">
        <a class="navbar-brand" href="#">Classroom Navigator</a>
        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -139,28 +139,53 @@ try {
                      </nav>
                      <div class="tab-content" id="nav-building">
                         <div class="tab-pane" id="nav-Building8" role="tabpanel" aria-labelledby="nav-Building8">
-                           <div class="column md-12 d-flex justify-content-center"><h1>Building 8</h1></div>
-                           <div class="column md-12 d-flex justify-content-center"><button type="button" class="btn btn-primary btn-lg" onclick="im('b81')">Floor 1</button></div>
-                           <br>
-                           <div class="column md-12 d-flex justify-content-center"><button type="button" class="btn btn-primary btn-lg" onclick="im('b82')">Floor 2</button></div>
-                           <br>
-                           <div class="column md-12 d-flex justify-content-center"><button type="button" class="btn btn-primary btn-lg" onclick="im('b83')">Floor 3</button></div>
-                           <br>
-                           <div class="column md-12 d-flex justify-content-center"><button type="button" class="btn btn-primary btn-lg" onclick="im('b84')">Floor 4</button></div>
-                           <br>
-                           <div class="column md-12 d-flex justify-content-center"><button type="button" class="btn btn-primary btn-lg" onclick="im('b85')">Floor 5</button></div>
+                        <div class="container"><br>
+                        <div class="btn-group" data-toggle="buttons-radio" role="group" aria-label="Basic radio toggle button group">
+                           <div class = "row no-gutters">
+                              <div class="column md-12 d-flex justify-content-center"><h1>Building 8</h1></div>
+                              <div class="column md-12 d-flex justify-content-center">
+                                 <input type="radio" class="btn-check btn-lg" name="bldfloor" id="b8g" onClick="im('b81');" autocomplete="off">
+                                 <label class="btn btn-outline-dark" for="b8g">Floor G</label></div>
+                              <div class="column md-12 d-flex justify-content-center">
+                                 <input type="radio" class="btn-check btn-lg" name="bldfloor" id="b81" onClick="im('b82');" autocomplete="off" >
+                                 <label class="btn btn-outline-dark" for="b81">Floor 1</label></div>
+                              <div class="column md-12 d-flex justify-content-center">
+                                 <input type="radio" class="btn-check btn-lg" name="bldfloor" id="b82" onClick="im('b83');" autocomplete="off" >
+                                 <label class="btn btn-outline-dark" for="b82">Floor 2</label></div>
+                              <div class="column md-12 d-flex justify-content-center">
+                                 <input type="radio" class="btn-check btn-lg" name="bldfloor" id="b83" onClick="im('b84');" autocomplete="off" >
+                                 <label class="btn btn-outline-dark" for="b83">Floor 3</label></div>
+                              <div class="column md-12 d-flex justify-content-center">
+                                 <input type="radio" class="btn-check btn-lg" name="bldfloor" id="b84" onClick="im('b85');" autocomplete="off" >
+                                 <label class="btn btn-outline-dark" for="b84">Floor 4</label></div>
+                              </div>
+                           </div>
+                        </div>
+                           
                         </div>
                         <div class="tab-pane" id="nav-Building9" role="tabpanel" aria-labelledby="nav-Building9">
-                           <div class="column md-12 d-flex justify-content-center"><h1>Building 9</h1></div>
-                           <div class="column md-12 d-flex justify-content-center"><button type="button" class="btn btn-primary btn-lg" onclick="im('b91');">Floor 1</button></div>
-                           <br>
-                           <div class="column md-12 d-flex justify-content-center"><button type="button" class="btn btn-primary btn-lg" onclick="im('b92')">Floor 2</button></div>
-                           <br>
-                           <div class="column md-12 d-flex justify-content-center"><button type="button" class="btn btn-primary btn-lg" onclick="im('b93')">Floor 3</button></div>
-                           <br>
-                           <div class="column md-12 d-flex justify-content-center"><button type="button" class="btn btn-primary btn-lg" onclick="im('b94')">Floor 4</button></div>
-                           <br>
-                           <div class="column md-12 d-flex justify-content-center"><button type="button" class="btn btn-primary btn-lg" onclick="im('b95')">Floor 5</button></div>
+                        <div class="container"><br>
+                        <div class="btn-group" data-toggle="buttons-radio" role="group" aria-label="Basic radio toggle button group">
+                           <div class = "row no-gutters">
+                              <div class="column md-12 d-flex justify-content-center"><h1>Building 9</h1></div>
+                              <div class="column md-12 d-flex justify-content-center">
+                                 <input type="radio" class="btn-check btn-lg" name="bldfloor" id="b91" onClick="im('b91');" autocomplete="off">
+                                 <label class="btn btn-outline-dark" for="b91">Floor 1</label></div>
+                              <div class="column md-12 d-flex justify-content-center">
+                                 <input type="radio" class="btn-check btn-lg" name="bldfloor" id="b92" onClick="im('b92');" autocomplete="off" >
+                                 <label class="btn btn-outline-dark" for="b92">Floor 2</label></div>
+                              <div class="column md-12 d-flex justify-content-center">
+                                 <input type="radio" class="btn-check btn-lg" name="bldfloor" id="b93" onClick="im('b93');" autocomplete="off" >
+                                 <label class="btn btn-outline-dark" for="b93">Floor 3</label></div>
+                              <div class="column md-12 d-flex justify-content-center">
+                                 <input type="radio" class="btn-check btn-lg" name="bldfloor" id="b94" onClick="im('b94');" autocomplete="off" >
+                                 <label class="btn btn-outline-dark" for="b94">Floor 4</label></div>
+                              <div class="column md-12 d-flex justify-content-center">
+                                 <input type="radio" class="btn-check btn-lg" name="bldfloor" id="b95" onClick="im('b95');" autocomplete="off" >
+                                 <label class="btn btn-outline-dark" for="b95">Floor 5</label></div>
+                              </div>
+                           </div>
+                        </div>
                         </div>
                      </div>
                   </div>

@@ -7,13 +7,14 @@ row.className="row m-auto text-center w-75";
 container.append(row);
 const url = '/Search/getClassInfo' + window.location.search;
 var i=1;
+var color;
 window.addEventListener('DOMContentLoaded',()=>{
    loadData();
 })
 function loadData(){
    fetch(url).then(rep=>rep.json())
    .then((data)=>{
-      console.log(data);
+      // console.log(data);
       addtoPage(data);
    })
 }
@@ -24,12 +25,15 @@ function addtoPage(arr){
       const pricingitem = document.createElement('div');
       if (i%3==1){
          pricingitem.className="col-12 princing-item red";
+         color="red";
       }
       else if (i%3==2){
          pricingitem.className="col-12 princing-item blue";
+         color="blue";
       }
       else if (i%3==0){
          pricingitem.className="col-12 princing-item green";
+         color="green";
       }
       const pricingdivider = document.createElement('div');
       pricingdivider.className= "pricing-divider";
@@ -96,7 +100,6 @@ function addtoPage(arr){
       ul.append(li1);
       const li2=document.createElement('li');
       li2.innerHTML=`<b>Location: </b> ${el.location}`;
-      // console.log(el.location)
       ul.append(li2);
       const li3=document.createElement('li');
       li3.innerHTML=`<b>Time: </b> ${el.days} ${el.start_time} - ${el.end_time}`;
@@ -106,23 +109,29 @@ function addtoPage(arr){
       ul.append(li4);
       const button = document.createElement('button')
       const bld = el.location.split(' ');
-      console.log(bld[1])
       if(el.location =="Online" || !(bld[1]==8 ||bld[1]==9 )){
-         button.className="btn btn-lg btn-block  btn-custom disabled";
+         button.className=`btn btn-lg btn-block  btn-${color} disabled`;
       }
       else{
-         button.className="btn btn-lg btn-block  btn-custom";
+         button.className=`btn btn-lg btn-block  btn-${color}`;
       }
+      
       button.textContent="Search";
       button.addEventListener("click", function() {
          window.location.href = "classroommap.html?classname="+el.class_id+"."+el.section+": "+el.class_name+"&location="+el.location+"&time="+el.start_time+"-"+el.end_time+"&instructor="+el.instructor;
       });
+      button.setAttribute("onClick",`colorPass("${color}");`);
       ul.append(button);
       const space =document.createElement("li");
       space.innerHTML="<br>";
       ul.append(space);
       row.append(pricingitem);
-      //console.log(pricingitem)
       i++;
    });
+}
+
+function colorPass(info)
+{
+   console.log(info);
+   sessionStorage.setItem("color",info);
 }
