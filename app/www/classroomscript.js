@@ -69,6 +69,7 @@ function gotoSearch(){
   li.className="nav-item";
   const link = document.createElement('a');
   link.setAttribute("class","nav-link");
+  link.setAttribute("style","color:black;")
   link.setAttribute("href","search.html"+sessionStorage.getItem("url"));
   link.textContent="Return to Search"
   li.append(link);

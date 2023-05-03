@@ -30,3 +30,7 @@
  .img-dark{
    border: 10px solid darkgray;
  }
+ .btn-custom {
+  padding: 5px;
+  font-size: 12px;
+}
