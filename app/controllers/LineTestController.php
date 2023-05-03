@@ -1,5 +1,5 @@
 <?php
-// Test controller
+// LineTest controller
 
 require_once(__DIR__ . "/../bootstrap.php");
 

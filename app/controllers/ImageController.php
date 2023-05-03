@@ -1,5 +1,5 @@
 <?php
-// Test controller
+// Image controller
 
 require_once(__DIR__ . "/../bootstrap.php");
 
