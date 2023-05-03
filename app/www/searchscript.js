@@ -6,6 +6,7 @@ const row = document.createElement('row')
 row.className="row m-auto text-center w-75";
 container.append(row);
 const url = '/Search/getClassInfo' + window.location.search;
+sessionStorage.setItem("url",window.location.search);
 var i=1;
 var color;
 window.addEventListener('DOMContentLoaded',()=>{
@@ -96,7 +97,7 @@ function addtoPage(arr){
       ul.className="list-unstyled mb-5 position-relative";
       cardbody.append(ul);
       const li1=document.createElement('li');
-      li1.innerHTML=`<br><b>Instructor: </b> ${el.instructor}`;
+      li1.innerHTML=`<b>Instructor: </b> ${el.instructor}`;
       ul.append(li1);
       const li2=document.createElement('li');
       li2.innerHTML=`<b>Location: </b> ${el.location}`;

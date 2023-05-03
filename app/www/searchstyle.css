@@ -55,6 +55,7 @@
    
    .princing-item {
      transition: all 150ms ease-out;
+     font-size: 20px;
    }
    .princing-item:hover {
      transform: scale(1.05);

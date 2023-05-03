@@ -59,77 +59,18 @@ function addtoPage(data){
     img.setAttribute('class',`img-shrink img-dark`)
   }
   imgout.append(img);
-  radioBtn()
+  gotoSearch()
 };
 
-// function radioBtn(){
-//   const radio = document.querySelector('.radioBtn');
-//   const row = document.createElement('div');
-//   row.className="row row-col-2 no-gutters";
-//   radio.append(row);
-//   const btngroup = document.createElement('div');
-//   btngroup.setAttribute("class","btn-group");
-//   btngroup.setAttribute("data-toggle","buttons-radio");
-//   btngroup.setAttribute("role","group")
-//   btngroup.setAttribute("aria-label","Basic radio toggle button group")
-//   row.append(btngroup);
-//   const btn1 = document.createElement('input');
-//   btn1.setAttribute("type","radio");
-//   btn1.setAttribute("class","btn-check");
-//   btn1.setAttribute("name","bldfloor");
-//   btn1.setAttribute("id","groundfloor");
-//   btn1.setAttribute("onClick","im('a1')");
-//   btn1.setAttribute("autocomplete","off");
-//   btngroup.append(btn1);
-//   const btn1label = document.createElement("label");
-//   if(sessionStorage.getItem("color")=="red")
-//   {  
-//     btn1label.setAttribute("class","btn btn-outline-danger");
-//   }
-//   else if(sessionStorage.getItem("color")=="blue")
-//   {  
-//     btn1label.setAttribute("class","btn btn-outline-primary");
-//   }
-//   else if(sessionStorage.getItem("color")=="green")
-//   {  
-//     btn1label.setAttribute("class","btn btn-outline-success");
-//   }
-//   else{
-//     btn1label.setAttribute("class","btn btn-outline-secondary");
-//   }
-//   btngroup.append(btn1label);
-//   const btn2 = document.createElement('input');
-//   btn2.setAttribute("type","radio");
-//   btn2.setAttribute("class","btn-check");
-//   btn2.setAttribute("name","bldfloor");
-//   btn2.setAttribute("id","groundfloor");
-//   btn2.setAttribute("onClick","im('a2')");
-//   btn2.setAttribute("autocomplete","off");
-//   btngroup.append(btn2);
-//   console.log(btn2);
-//   const btn2label = document.createElement("label");
-//   if(sessionStorage.getItem("color")=="red")
-//   {  
-//     btn2label.setAttribute("class","btn btn-outline-danger");
-//   }
-//   else if(sessionStorage.getItem("color")=="blue")
-//   {  
-//     btn2label.setAttribute("class","btn btn-outline-primary");
-//   }
-//   else if(sessionStorage.getItem("color")=="green")
-//   {  
-//     btn2label.setAttribute("class","btn btn-outline-success");
-//   }
-//   else{
-//     btn2label.setAttribute("class","btn btn-outline-secondary");
-//   }
-//   btngroup.append(btn2label)
-// }
-// /* <div class = "row row-col-2 no-gutters">
-//             <div class="btn-group" data-toggle="buttons-radio" role="group" aria-label="Basic radio toggle button group">
-//               <input type="radio" class="btn-check" name="bldfloor" id="groundfloor" onClick="im('a1');" autocomplete="off" checked>
-//               <label class="btn btn-outline-primary" for="groundfloor">Ground Floor</label>
-//               <input type="radio" class="btn-check" name="bldfloor" id="classfloor" onClick="im('a2');" autocomplete="off">
-//               <label class="btn btn-outline-primary" for="classfloor">Class Floor</label>
-//             </div>
-//           </div> */
+function gotoSearch(){
+  const goBack = document.querySelector('.return');
+  const li = document.createElement('li');
+  goBack.append(li);
+  li.className="nav-item";
+  const link = document.createElement('a');
+  link.setAttribute("class","nav-link");
+  link.setAttribute("href","search.html"+sessionStorage.getItem("url"));
+  link.textContent="Return to Search"
+  li.append(link);
+  
+};
