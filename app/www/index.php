@@ -33,15 +33,15 @@ try {
 <!DOCTYPE html>
 <html>
 <head>
-<title>Classroom Homepage</title>
+<title>CPPNavigator</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 <link href="headerstyle.css" rel="stylesheet">
 <link href="homepage.css" rel="stylesheet">
 <body class="body-content" onLoad="floorPlans()">
-<nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-light" style="background-color:white">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-light" style="background-color:#91e0ff">
     <div class="container-fluid">
       <img src="images/cpp_nav.png" height=40 width=40>
-       <a class="navbar-brand" href="index.php"> <span class="bg">Cpp</span> Navigator</a>
+       <a class="navbar-brand" href="index.php"> <span class="bg">CPP</span> Navigator</a>
        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
       </button>
@@ -114,7 +114,7 @@ try {
                      <br>
                      <div class="row">
                         <div class="col-md-11 d-flex justify-content-end">
-                           <button type="submit" class="btn btn-primary" >Submit</button>
+                           <button type="submit" class="btn btn-primary" >Search</button>
                         </div>
                      </div>
                   </form>

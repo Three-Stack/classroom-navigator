@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>About Page</title>
+<title>CPPNavigator About</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -17,10 +17,10 @@
 
 <body class="body-content">
   <!-- Navbar (sit on top) -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-light" style="background-color:white">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-light" style="background-color:#91e0ff">
     <div class="container-fluid">
       <img src="images/cpp_nav.png" height=40 width=40>
-       <a class="navbar-brand" href="index.php"> <span class="bg">Cpp</span> Navigator</a>
+       <a class="navbar-brand" href="index.php"> <span class="bg">CPP</span> Navigator</a>
        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
       </button>
@@ -37,7 +37,7 @@
   <img class="w3-image" src="/images/Aerial-quad.jpeg" alt="Architecture" width="1500" height="800">
   <div class="w3-display-middle w3-margin-top w3-center">
     
-    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>Cpp</b></span> <span class="w3-hide-small w3-text-light-grey">Navigator</span></h1>
+    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>CPP</b></span> <span class="w3-hide-small w3-text-light-grey">Navigator</span></h1>
   </div>
 </header>
 
@@ -47,45 +47,95 @@
   <!-- About Section -->
   <div class="w3-container w3-padding-32" id="about">
     <h3 class="w3-border-bottom w3-border-black w3-padding-16 text-dark font-weight-normal">About</h3>
-    <p>Have you ever gotten to school on time at the start of a new semester, found the building of your first class, 
-      and then spent 20 minutes walking in circles trying to find your classroom? Room numbers in the buildings at Cal Poly Pomona 
-      can be confusing and unintuitive, making it difficult to find your class for the first time.Classroom Navigator, 
-      or cppnavigator, is a tool we built to navigate the buildings and classrooms of Cal Poly Pomona. Our tool contains a search 
-      functionality to narrow down and find your exact class. Once your find your class, you can explore the floor plan of the 
-      building and get exact directions to your classroom.
+    <p>
+      CPPNavigator is a tool designed to help find classrooms in Cal Poly Pomona.
+      It was created by three students as a final project for the Software Engineering class.
+    </p>
+    <p>
+      As students at Cal Poly Pomona, we noticed that room numbers in buildings were sometimes confusing and unintuitive.
+      This makes it difficult to find your classroom as the start of a new semester without being late for class.
+      After asking around and getting stories from other students, we found that this was a common issue experienced at Cal Poly Pomona.
+    </p>
+    <p>
+      Our goal is to help navigate the buildings at Cal Poly Pomona, so we built a search tool to search for your class.
+      You can select a class by section and find its building and room number. Then, you can explore a floor plan of the building
+      to find exactly where the room is located.
+    </p>
+    <p>
+      Our navigation tool to display directions is only supported for Buildings 8 and 9, but our class search tool
+      covers every class at Cal Poly Pomona.
     </p>
   </div>
    <!-- About Section -->
    <div class="w3-container w3-padding-32" id="about">
     <h3 class="w3-border-bottom w3-border-black w3-padding-16 text-dark font-weight-normal">How does it work?</h3>
-    <p>We get class information for each semester from public search functions. If you've ever used Cal Poly Pomona's class search, 
-      you've probably found it to be incredibly slow and frustrating.  Luckily, we do all the class searching and processing for you. 
+    <p>
+      We get class information for each semester from public search functions. If you've ever used Cal Poly Pomona's class search, 
+      you've probably found it to be incredibly slow and frustrating.
+    </p>
+    <p>
+      Luckily, we do all the class searching and processing for you. 
       You can use our search tool to search for and get information about Cal Poly Pomona classes, even if you're not looking for directions. 
-      Our search tool is much faster, so you can search the Cal Poly Pomona class databse quickly and easily.  To display directions, we use floor 
-      plans of each building. Unfortunately, these floor plans are not publicly available. We were only able to get floor plans for Buildings 8 and 9 
-      for now.  This means that our search tool covers all classes at Cal Poly Pomona, but our direction tool only works for classes in Buildings 8 and 9. 
+      Our search tool is much faster, so you can search the Cal Poly Pomona class databse quickly and easily.
+    <p>
+      To display directions, we use floor plans of each building. Unfortunately, these floor plans are not publicly available. We were only able to get floor plans for Buildings 8 and 9 
+      for now. 
+    </p>
+    <p>
+      This means that our search tool covers all classes at Cal Poly Pomona, but our direction tool only works for classes in Buildings 8 and 9. 
       Once we obtain floor plans for more buildings, this tool may be updated in the future.  
     </p>
   </div>
   <!--How to get started-->
   <div class="w3-container w3-padding-32" id="about">
-    <h3 class="w3-border-bottom w3-border-black w3-padding-16 text-dark font-weight-normal">How to get started?</h3>
-    <p>To get started click the search button in the navigation bar. This will bring you to the CPP Navigation on the left side or search on the right side. On the search, page add 
-      the info in the text feilds as you want. The search will look into our database to find matching classes based on the info provided.
-      The text feilds of Course ID,Course Name,Section Number, and Instrostor will look into the database and find matching classes. 
-      More information will narrow the search. Our search can find classes in different terms. To change terms go to the Term feild and change
-      the it in the dropdown.
+    <h3 class="w3-border-bottom w3-border-black w3-padding-16 text-dark font-weight-normal">How to get started</h3>
+    <p>
+      To get started, click the Search button on the navigation bar to go to our search tool. You can either search for classes,
+      or look at the building maps to review the floor plans.
+    </p>
+    <p>
+      To use the search tool, input any criteria into any of the search boxes. Our search tool will return a list of all classes matching your search.
+      You can then view your search results to find your exact class. If your class is in a building supported by our navigation tool, you can
+      click "Get Directions" to view exact directions to your class.
+    </p>
+    <p>
+      Our search function matches all fields which you entered. A blank field acts as a wildcard (matches anything for that field).
+    </p>
+    <p>
+      Search examples:<br>
+      Course ID "CS 4800" will find all sections of the course CS 4800 - Software Engineering.<br>
+      Course ID "CS 4800" and Section Number "01" will find the exact class CS 4800.01 - Software Engineering.<br>
+      Only searching by Section Number "01" will find <b>all</b> classes with section 01. This is not very useful on its own.<br>
+      Searching for Course ID "CS" will return any class containing CS - this returns CS classes, but also ECS classes such as ECS 3800.<br>
+      You can also search by Instructor - searching for "Sun" will return all classes taught by Yu Sun but also other professors such as Peng Sun and Sunny Lie.<br>
+      Using a combination of these search fields is best for finding the exact class you're looking for.
+    </p>
+  </div>
+  <!--How to use the directions tool-->
+  <div class="w3-container w3-padding-32" id="about">
+    <h3 class="w3-border-bottom w3-border-black w3-padding-16 text-dark font-weight-normal">How to use the navigation tool</h3>
+    <p>
+      Clicking on the "Get Directions" button for a search result will bring you to the floor plan for the building which the class is in.
+      You will be brought to the ground level of the building.
+    </p>
+    <p>
+      If the classroom is on the ground floor, you will see an arrow pointing towards the class from the building's entrance.
+      Keep in mind that buildings have multiple entrances, so our navigation tool assumes you use the most commonly used entrance.
+    </p>
+    <p>
+      If the classroom is on a different floor, you will see an arrow pointing towards either the elevator or the stairs.
+      Then, you can click "Class Floor" to see the map for the floor which the class is on.
+      An arrow will guide you to your class from the stairs or the elevator to the classroom.
     </p>
   </div>
   
-
-  <!--Contributers-->
+  <!--Contributors-->
   <div class="container-fluid bg-gradient p-5">
     <div class="row m-auto text-center w-75">
       
       <div class="col-4 princing-item red">
         <div class="pricing-divider ">
-          <p><h4 class="my-0 display-4 text-light font-weight-normal mb-3">Zhong <br>Ooi</h4></p>
+          <p><h4 class="my-0 display-4 text-light font-weight-normal mb-3">Zhong<br>Ooi</h4></p>
            <svg class='pricing-divider-img' enable-background='new 0 0 300 100' height='100px' id='Layer_1' preserveAspectRatio='none' version='1.1' viewBox='0 0 300 100' width='300px' x='0px' xml:space='preserve' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
         <path class='deco-layer deco-layer--1' d='M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
  c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z' fill='#FFFFFF' opacity='0.6'></path>
@@ -113,7 +163,7 @@
       
       <div class="col-4 princing-item blue">
        <div class="pricing-divider ">
-         <p><h4 class="my-0 display-4 text-light font-weight-normal mb-3">Jeremy Embar</h4></p>
+         <p><h4 class="my-0 display-4 text-light font-weight-normal mb-3">Jeremy<br>Embar</h4></p>
           <svg class='pricing-divider-img' enable-background='new 0 0 300 100' height='100px' id='Layer_1' preserveAspectRatio='none' version='1.1' viewBox='0 0 300 100' width='300px' x='0px' xml:space='preserve' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
        <path class='deco-layer deco-layer--1' d='M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
  c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z' fill='#FFFFFF' opacity='0.6'></path>
@@ -126,7 +176,7 @@
      </svg>
        </div>
        <div class="card-body bg-white mt-0 shadow">
-        <p style="font-size:20px; "><b>PHP/Backend</b> Developer<br></p>
+        <p style="font-size:20px; "><b>Systems, Database Management</b><br></p>
         <button type="button" class="btn btn-lg btn-block  btn-blue " onclick="location.href='https://github.com/jembar-cpp'">
           <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
             <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
@@ -141,7 +191,7 @@
  
      <div class="col-4 princing-item green">
        <div class="pricing-divider ">
-         <p><h4 class="my-0 display-4 text-light font-weight-normal mb-3">Lorenzo Cabrera</h4></p>
+         <p><h4 class="my-0 display-4 text-light font-weight-normal mb-3">Lorenzo<br>Cabrera</h4></p>
           <svg class='pricing-divider-img' enable-background='new 0 0 300 100' height='100px' id='Layer_1' preserveAspectRatio='none' version='1.1' viewBox='0 0 300 100' width='300px' x='0px' xml:space='preserve' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
        <path class='deco-layer deco-layer--1' d='M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
  c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z' fill='#FFFFFF' opacity='0.6'></path>

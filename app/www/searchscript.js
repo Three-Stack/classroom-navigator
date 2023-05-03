@@ -117,7 +117,7 @@ function addtoPage(arr){
          button.className=`btn btn-lg btn-block  btn-${color}`;
       }
       
-      button.textContent="Search";
+      button.textContent="Get Directions";
       button.addEventListener("click", function() {
          window.location.href = "classroommap.html?classname="+el.class_id+"."+el.section+": "+el.class_name+"&location="+el.location+"&time="+el.start_time+"-"+el.end_time+"&instructor="+el.instructor;
       });
