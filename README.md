@@ -1,4 +1,4 @@
-# Classroom Navigator
+# CPPNavigator
 
 ## Cal Poly Pomona CS 4800 - Software Engineering
 
@@ -7,7 +7,7 @@ Group project by Lorenzo Cabrera, Jeremy Embar, Zhong Ooi
 
 ## About this project
 
-Classroom Navigator, or CPPNavigator, is a tool designed to help find classrooms in Cal Poly Pomona. It was created as a final project for the class CS 4800 - Software Engineering.\
+CPPNavigator is a tool designed to help find classrooms in Cal Poly Pomona. It was created as a final project for the class CS 4800 - Software Engineering.\
 \
 For more details and information about the project and how it works, you can visit [our page in the group repository](http://cs480-projects.github.io/teams-spring2023/Three-Stack/index.html).\
 \
