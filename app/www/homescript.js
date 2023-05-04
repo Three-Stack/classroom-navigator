@@ -15,3 +15,11 @@ function floorPlans() {
    document.getElementById(image[0]).src = eval(image + ".src")
  }
  
+function roomSearch()
+{
+  var temp = document.getElementById("bld").value
+  var temp2 = document.getElementById("rmnbr").value
+  console.log(temp,temp2)
+  sessionStorage.clear()
+  window.location = `classroommap.html?classname=&location="Bldg ${temp} Rm ${temp2}+"&time=&instructor=`;
+}

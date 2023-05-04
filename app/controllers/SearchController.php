@@ -105,6 +105,7 @@ class SearchController extends BaseController {
             $stmt->execute(array($building, $classroom_nbr));
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
             if(empty($row)) {
+                $this->setResponse(0);
                 return;
             }
             $this->setResponse($array = array(

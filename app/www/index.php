@@ -61,7 +61,8 @@ try {
          <div class="leftside">
             <nav>
                <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                  <a class="nav-link nav-fill active" id="nav-classroom-tab" data-bs-toggle="tab" href="#nav-classroom" role="tab" onclick="im('bhome')" aria-controls="nav-classroom" aria-selected="true">Classroom</a>
+                  <a class="nav-link nav-fill active" id="nav-classroom-tab" data-bs-toggle="tab" href="#nav-classroom" role="tab" onclick="im('bhome')" aria-controls="nav-classroom" aria-selected="true">Class Search</a>
+                  <a class="nav-link" id="nav-room-tab" data-bs-toggle="tab" href="#nav-room" role="tab" onclick="im('bhome')" aria-controls="nav-map" aria-selected="false">Room Search</a>
                   <a class="nav-link" id="nav-map-tab" data-bs-toggle="tab" href="#nav-map" role="tab" aria-controls="nav-map" aria-selected="false">Building Maps</a>
                </div>
             </nav>
@@ -117,6 +118,32 @@ try {
                      <div class="row">
                         <div class="col-md-11 d-flex justify-content-end">
                            <button type="submit" class="btn btn-primary" >Search</button>
+                        </div>
+                     </div>
+                  </form>
+               </div>
+               <div class="tab-pane fade" id="nav-room" role="tabpanel" aria-labelledby="nav-home-tab">
+                  <br>
+                  <form method="GET">
+                     <div class="form-group row">
+                        <label for="class" class="col-sm-4 col-form-label d-flex justify-content-end">BLD</label>
+                        <div class="col-sm-7 d-flex justify-content-start">
+                           <input type="text" class="form-control" id="bld" aria-describedby="classNumber" name="bld"
+                              placeholder="ex. 9"/>
+                        </div>
+                     </div>
+                     <br>
+                     <div class="form-group row">
+                        <label for="class" class="col-sm-4 col-form-label d-flex justify-content-end">Room Number</label>
+                        <div class="col-sm-7 d-flex justify-content-start">
+                           <input type="text" class="form-control" id="rmnbr" aria-describedby="classNumber" name="rmnbr"
+                              placeholder="ex. 247"/>
+                        </div>
+                     </div>
+                     <br>
+                     <div class="row">
+                        <div class="col-md-11 d-flex justify-content-end">
+                           <a type="submit" class="btn btn-primary" onClick="roomSearch();">Search</a>
                         </div>
                      </div>
                   </form>

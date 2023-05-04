@@ -25,6 +25,20 @@ function loadData(){
    fetch(url).then(rep=>rep.json())
    .then((data)=>{
       console.log(data);
+      if(data==0)
+      {
+        const goBack = document.querySelector('.imgout');
+        const word = document.createElement('p');
+        word.setAttribute("style","font-size: 30px; text-align:center");
+        word.innerHTML=`<br>No classroom found, please remove check your building and room number.<br>`;
+        goBack.append(word) 
+        const button = document.createElement('a');
+        button.textContent="New Search";
+        button.setAttribute("class","btn btn-outline-dark btn-lg btn-block");
+        button.setAttribute("href","index.php")
+        word.append(button)
+        return;
+      }
       addtoPage(data);
    })
 }
@@ -85,7 +99,12 @@ function gotoSearch(){
   const link = document.createElement('a');
   link.setAttribute("class","nav-link");
   link.setAttribute("style","color:black;")
-  link.setAttribute("href","search.html"+sessionStorage.getItem("url"));
+  if(sessionStorage.getItem("url")==null){
+    link.setAttribute("href","index.php");
+  }
+  else{
+    link.setAttribute("href","search.html"+sessionStorage.getItem("url"));
+  }
   link.textContent="Return to Search"
   li.append(link);
   
